@@ -1,7 +1,8 @@
 <template>
     <div id="header">
         <img src="../assets/pokeball-icon.svg" alt="ícone de uma pokebola">
-        <span> Pokédex </span>
+        <span
+        @click="$emit('resetPage')"> Pokédex </span>
         <div>
             <img src="../assets/search-icon.svg" alt="ícone de uma lupa">
         </div>

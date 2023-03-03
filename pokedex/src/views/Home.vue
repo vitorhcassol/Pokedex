@@ -1,6 +1,8 @@
 <template>
     <div id="wrapper">
-        <Header></Header>
+        <Header
+        @reset-page="this.$store.dispatch('loadPokemons', 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')"
+        ></Header>
         <PokeList :pokemons="pokePage.results"/>
         <Footer
         :previousPageURL="pokePage.previous"
