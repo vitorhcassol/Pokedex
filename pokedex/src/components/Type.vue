@@ -14,6 +14,9 @@ export default {
 <style scoped>
 
 .tag {
+    display: flex;
+    align-items: center;
+
     max-width: 80%;
 
     border-radius: 2rem;
@@ -24,6 +27,12 @@ export default {
 
     text-align: center;
     font-size: 1rem;
+}
+
+@media only screen and (min-width: 900px) {
+    .tag {
+        font-size: 1.5rem;
+    }
 }
 
 </style>

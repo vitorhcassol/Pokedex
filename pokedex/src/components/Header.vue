@@ -30,4 +30,11 @@
     align-items: center;
 }
 
+@media only screen and (min-width: 426px) {
+    #header {
+        justify-content: center;
+
+        gap: 9.8rem;
+    }
+}
 </style>

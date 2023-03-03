@@ -134,7 +134,10 @@ export default {
 .col-b {
     grid-area: B;
 
-    padding-top: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+
 }
 
 .col-c {
@@ -150,6 +153,70 @@ export default {
 .col-a div {
     display: grid;
     grid-gap: 0.4rem;
+}
+
+.col-b img {
+    width: 9rem;
+}
+
+@media only screen and (min-width: 426px) {
+    .card {
+        width: 35.5vw;
+        height: 23.8vw;
+
+        max-width: 23rem;
+        max-height: 13rem;
+    }
+
+    .col-b img {
+        width: fit-content;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .card {
+        font-size: 2.1rem;
+
+        width: 25.5vw;
+        height: 13.8vw;
+
+        max-width: 27rem;
+        max-height: 17rem;
+    }
+
+    .col-a {
+        gap: 1.1rem;
+    }
+
+    .col-a div {
+        grid-gap: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .card {
+        font-size: 2.4rem;
+
+        width: 15.5vw;
+        height: 10.8vw;
+
+        max-width: 35rem;
+        max-height: 25rem;
+    }
+
+    .col-a {
+        gap: 2rem;
+    }
+
+    .col-a div {
+        grid-gap: 1.6rem;
+    }
+
+    .col-b img {
+        width: 7vw;
+
+        max-width: 16rem;
+    }
 }
 
 </style>

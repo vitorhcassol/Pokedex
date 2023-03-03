@@ -30,12 +30,27 @@ export default {
 
     display: grid;
     grid-template-areas: 
-        'L R'
-        'L R'
+        'C C'
     ;
 
     align-self: center;
     justify-self: center;
+}
+
+@media only screen and (min-width: 900px) {
+    #list {
+        grid-template-areas:
+            'C C C'
+        ;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    #list {
+        grid-template-areas:
+            'C C C C C'
+        ;
+    }
 }
 
 </style>
