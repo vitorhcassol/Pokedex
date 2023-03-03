@@ -1,54 +1,11 @@
 <template>
-  <div id="wrapper">
-    <Header></Header>
-    <PokeList :pokemons="pokemons"/>
-    <Footer
-    :previousPageURL="previousPage"
-    :nextPageURL="nextPage"
-
-    @backward="getUrl(previousPage)"
-    @forward="getUrl(nextPage)"
-    ></Footer>
-  </div>
+  <router-view/>
 </template>
 
 <script>
 
-import Header from './components/Header.vue';
-import PokeList from './components/PokeList.vue';
-import Footer from './components/Footer.vue';
-
 export default {
-  components: {
-    Header,
-    PokeList,
-    Footer
-  },
-
-  data() {
-      return {
-        pokemons: null,
-        nextPage: null,
-        previousPage: undefined
-      }
-  },
-
-  methods: {
-    //Busca a url com uma página de 10 pokemons
-    getUrl(url) {
-    this.axios
-    .get(url)
-    .then((response) => {
-        this.pokemons = response.data.results;
-        this.nextPage = response.data.next;
-        this.previousPage = response.data.previous;
-      })
-    }
-  },
-
-  created() {
-      this.getUrl('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0');
-  }
+  
 }
 
 </script>
@@ -85,18 +42,6 @@ export default {
 
   /* Padronização de tamanho */
   font-size: 62.5%; /* 1rem = 10px */
-
-  
-}
-
-#wrapper {
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: space-between;
-  align-items: center;
 }
 
 </style>

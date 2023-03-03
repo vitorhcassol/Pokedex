@@ -1,7 +1,6 @@
 <template>
     <button
-    :disabled="isDisabled"
-    >
+    :disabled="isDisabled">
         <img :src="setImgDirection" :alt="direction">
     </button>
 </template>
