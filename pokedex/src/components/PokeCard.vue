@@ -1,5 +1,7 @@
 <template>
-    <div class="card">
+    <div
+    @click="goToPokemonDetail(this.url)"
+    class="card">
 
         <!-- Section das informações à esquerda-->
         <section class="col-a">
@@ -52,17 +54,22 @@ export default {
             this.axios
             .get( this.url )
             .then((response) => {
-                this.info = response.data
-                this.name = this.primeiraLetraMaiuscula(response.data.name)
-                this.id = response.data.id
-                this.rootTypes = response.data.types
-                this.img = response.data.sprites.front_default
+                this.info = response.data;
+                this.name = this.primeiraLetraMaiuscula(response.data.name);
+                this.id = response.data.id;
+                this.rootTypes = response.data.types;
+                this.img = response.data.sprites.front_default;
             })
         },
 
         //Retorna uma string com a primeira letra maiúscula
         primeiraLetraMaiuscula(string) {
             return string[0].toUpperCase() + string.substring(1)
+        },
+
+        //Encaminha para a tela de detalhes do pokemon
+        goToPokemonDetail(url) {
+            this.$router.push({name: 'Pokemon', params: {url: this.url}})
         }
     },
 
@@ -71,7 +78,8 @@ export default {
             return this.rootTypes.map(x => this.primeiraLetraMaiuscula(x.type.name))
         },
 
-        //Retorna o id formatado no estilo do Figma
+        //Retorna o id formatado no estilo determinado
+        //Pelo projeto do Figma
         idFormatado(id) {
             return (this.id).toLocaleString('en-US', {
                 minimumIntegerDigits: 3, 
