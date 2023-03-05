@@ -9,6 +9,7 @@
             <div>
                 <Type
                 v-for="(type, key) in types" :key="key"
+                :class="'tagHome'"
                 :type="type"/>
             </div>
         </section>
@@ -69,7 +70,7 @@ export default {
 
         //Encaminha para a tela de detalhes do pokemon
         goToPokemonDetail(url) {
-            this.$router.push({name: 'Pokemon', params: {url: this.url}})
+            this.$router.push({name: 'Pokemon', params: {url: url}})
         }
     },
 
@@ -139,6 +140,11 @@ export default {
     padding: 1rem 0rem 1rem 1rem;
 }
 
+.col-a div {
+    display: grid;
+    grid-gap: 0.4rem;
+}
+
 .col-b {
     grid-area: B;
 
@@ -146,6 +152,9 @@ export default {
     align-items: flex-end;
     justify-content: end;
 
+}
+.col-b img {
+    width: 9rem;
 }
 
 .col-c {
@@ -156,15 +165,6 @@ export default {
     justify-content: flex-end;
 
     padding: 0rem 0rem 1rem 1rem;
-}
-
-.col-a div {
-    display: grid;
-    grid-gap: 0.4rem;
-}
-
-.col-b img {
-    width: 9rem;
 }
 
 @media only screen and (min-width: 426px) {
