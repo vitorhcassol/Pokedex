@@ -51,31 +51,16 @@ export default {
     },
 
     watch: {
-        url: {
-            handler(newUrl) {
-                if (newUrl !== undefined) {
-                    this.getEvolutionChainUrl()
-                }
-            },
-            immediate: true
+        url(newUrl) {
+            this.getEvolutionChainUrl()
         },
 
-        evolutionChainUrl: {
-            handler(newUrl) {
-                if (newUrl !== undefined) {
-                    this.getEvolutionChainObj()
-                }
-            },
-            immediate: true
+        evolutionChainUrl(newEvolutionChainUrl) {
+            this.getEvolutionChainObj()
         },
 
-        evolutionChainObj: {
-            handler(newObj) {
-                if (newObj !== undefined) {
-                    this.prepareEvoArray()
-                }
-            },
-            immediate: true
+        evolutionChainObj(newEvolutionChainObj) {
+            this.prepareEvoArray()
         }
     }
 }
