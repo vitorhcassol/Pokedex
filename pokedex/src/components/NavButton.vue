@@ -1,7 +1,17 @@
 <template>
     <button
     :disabled="isDisabled">
-        <img :src="setImgDirection" :alt="direction">
+    <!-- Se for previous for passado como prop
+    Renderiza essa arrow em svg -->
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+    v-if="direction === 'previous'">
+        <path d="M5 11.8814L9.21875 17.2594M20 11.8814H5H20ZM5 11.8814L9.21875 7L5 11.8814Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <!-- Se for next renderiza esta -->
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+    v-if="direction === 'next'">
+        <path d="M20 11.8814L15.7812 17.2594M5 11.8814H20H5ZM20 11.8814L15.7812 7L20 11.8814Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
     </button>
 </template>
 
@@ -11,17 +21,7 @@ export default {
     props: [
         'direction',
         'isDisabled'
-    ],
-
-    computed: {
-        setImgDirection() {
-            if(this.direction === 'previous') {
-                return './src/assets/left-arrow-icon.svg'
-            } else {
-                return './src/assets/right-arrow-icon.svg'
-            }
-        }
-    }
+    ]
 }
 
 </script>
