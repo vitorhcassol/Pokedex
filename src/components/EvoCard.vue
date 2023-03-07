@@ -1,7 +1,7 @@
 <template>
     <div
     v-if="img"
-    class="evo-list">
+    class="evo-wrapper">
         <div id="evo-card">
             <img :src="img" :alt="pokemon">
         </div>
@@ -51,8 +51,13 @@ export default {
     },
 
     watch: {
-        pokemon() {
-            this.getUrl();
+        pokemon: {
+            handler(newPokemon) {
+                if (newPokemon !== undefined) {
+                    this.getUrl();
+                }
+            },
+            immediate: true
         },
 
         url(newUrl) {
@@ -65,7 +70,7 @@ export default {
 
 <style scoped>
 
-.evo-list {
+.evo-wrapper {
     display: flex;
     flex-direction: column;
 
