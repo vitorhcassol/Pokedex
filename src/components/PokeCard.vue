@@ -41,7 +41,6 @@ export default {
 
     data() {
         return {
-            info: "",
             name: "",
             img: "",
             id: "",
@@ -55,7 +54,6 @@ export default {
             this.axios
             .get( this.url )
             .then((response) => {
-                this.info = response.data;
                 this.name = this.primeiraLetraMaiuscula(response.data.name);
                 this.id = response.data.id;
                 this.rootTypes = response.data.types;
@@ -127,6 +125,8 @@ export default {
 
     font-family: var(--pixel-font);
     font-size: 1.6rem;
+
+    cursor: pointer;
 }
 
 .col-a {

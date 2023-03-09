@@ -146,12 +146,13 @@ export default {
         }
     },
 
-    watch: {
-
-    },
-
     created() {
-        this.getBasics();
+        this.$watch(
+            () => this.$route.params,
+            (toParams, previousParams) => {
+                this.getBasics();
+            }, { immediate: true}
+        )
     }
 }
 
