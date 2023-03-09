@@ -1,7 +1,12 @@
 <template>
-    <EvoCard
-    :pokemon="evolutionArray"
-    ></EvoCard>
+    <div 
+    id="evo-list">
+        <EvoCard
+        v-for="(pokemon, index) in evolutionArray"
+        :key="index"
+        :pokemon="pokemon"
+        ></EvoCard>
+    </div>
 </template>
 
 <script>
@@ -46,38 +51,46 @@ export default {
 
         //Retorna um array com o link das evoluções
         prepareEvoArray() {
-            this.evolutionArray = this.evolutionChainObj.species.name;
+            //this.evolutionArray = this.evolutionChainObj.species.name;
+
+            let evoData = this.evolutionChainObj;
+
+            do {
+                this.evolutionArray.push(evoData.species.name);
+
+                evoData = evoData['evolves_to'][0];
+            } while (!!evoData && evoData.hasOwnProperty('evolves_to'));
         }
     },
 
     watch: {
-        url: {
-            handler(newUrl) {
-                if (newUrl !== undefined) {
-                    this.getEvolutionChainUrl()
-                }
-            },
-            immediate: true
+        url(newUrl) {
+            this.getEvolutionChainUrl()
         },
 
-        evolutionChainUrl: {
-            handler(newUrl) {
-                if (newUrl !== undefined) {
-                    this.getEvolutionChainObj()
-                }
-            },
-            immediate: true
+        evolutionChainUrl(newEvolutionChainUrl) {
+            this.getEvolutionChainObj()
         },
 
-        evolutionChainObj: {
-            handler(newObj) {
-                if (newObj !== undefined) {
-                    this.prepareEvoArray()
-                }
-            },
-            immediate: true
+        evolutionChainObj(newEvolutionChainObj) {
+            this.prepareEvoArray()
         }
     }
 }
 
 </script>
+
+<style>
+
+#evo-list {
+    display: flex;
+
+    width: 80vw;
+    max-width: 819.2px;
+
+    justify-content: space-around;
+
+    gap: 1.5rem;
+}
+
+</style>
