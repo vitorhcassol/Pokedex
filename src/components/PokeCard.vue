@@ -125,6 +125,8 @@ export default {
 
     font-family: var(--pixel-font);
     font-size: 1.6rem;
+
+    cursor: pointer;
 }
 
 .col-a {

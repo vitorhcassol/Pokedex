@@ -1,8 +1,9 @@
 <template>
     <div
     v-if="img"
+    @click="goToPokemonDetail(this.url)"
     class="evo-wrapper">
-        <div id="evo-card">
+        <div class="evo-card">
             <img :src="img" :alt="pokemon">
         </div>
         <div> {{ name }} </div>
@@ -47,6 +48,11 @@ export default {
         //Retorna uma string com a primeira letra maiúscula
         primeiraLetraMaiuscula(string) {
             return string[0].toUpperCase() + string.substring(1)
+        },
+
+        //Encaminha para a tela de detalhes do pokemon
+        goToPokemonDetail(url) {
+            this.$router.push({name: 'Pokemon', params: {url: url}})
         }
     },
 
@@ -77,11 +83,13 @@ export default {
     align-items: center;
 
     gap: 1.5rem;
+
+    cursor: pointer;
 }
 
-#evo-card {
+.evo-card {
     display: flex;
-
+    
     min-width: 7.5rem;
     min-height: 7.5rem;
 

@@ -1,5 +1,6 @@
 <template>
-    <div id="evo-list">
+    <div 
+    id="evo-list">
         <EvoCard
         v-for="(pokemon, index) in evolutionArray"
         :key="index"
@@ -87,7 +88,7 @@ export default {
     width: 80vw;
     max-width: 819.2px;
 
-    justify-content: space-between;
+    justify-content: space-around;
 
     gap: 1.5rem;
 }
