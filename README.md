@@ -1,29 +1,76 @@
-# pokedex
+<h2>
+  <a href="https://vitorhcassol.github.io/Pokedex/" target="_blank"> Projeto Pokédex </a>
+</h2>
+  
+<p>
+  Este projeto tem como objetivo exercitar através da prática os conhecimentos que eu venho acumulando em desenvolvimento front-end. Sendo estes conhecimentos:
+</p>
 
-This template should help get you started developing with Vue 3 in Vite.
+<h3> 
+  <a href="https://vuejs.org" target="_blank"> Vue.js 3 </a>
+</h3>
 
-## Recommended IDE Setup
+<p>
+  O objetivo principal era praticar o uso do framework Vue.js 3 usando Option API, abordando os seguintes tópicos:
+</p>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<ul>
+  <li>
+    <h4> Essentials </h4>
+    <p>
+      Todos os tópicos essenciais de acordo com a documentação do próprio Vue.js como list renderering, conditional rendering, watchers, lifecycle hooks, básico    sobre componentes etc.
+    </p>
+  </li>
+  <li>
+    <h4> Components In-Depth </h4>
+    <p> Tópicos como Props, Events, Fallthrough Attributes etc. </p>
+  </li>
+</ul>
 
-## Customize configuration
+<h3> 
+  <a href="https://www.npmjs.com/package/vue-axios" target="_blank"> Vue axios </a>
+</h3>
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+<p>
+  O uso do axios foi fundamental para a prática no consumo de API's. A API em questão utilizada para trazer as todas as informações necessárias para renderizar os pokémons foi a <strong><a href="https://pokeapi.co" target="_blank">POKEAPI</a></strong>.
+</p>
 
-## Project Setup
+<h3> 
+  <a href="https://router.vuejs.org" target="_blank"> Vue Router </a>
+</h3>
 
-```sh
-npm install
-```
+<p>
+  O Vue Router foi de suma importância para a navegação entre telas da aplicação. Foi possível exercitar conceitos como rotas e paramêtros de rotas.
+</p>
 
-### Compile and Hot-Reload for Development
+<h3> 
+  <a href="https://vuex.vuejs.org" target="_blank"> Vuex </a>
+</h3>
 
-```sh
-npm run dev
-```
+<p>
+  O Vuex supriu a necessidade de termos um local de armazenamento de acesso global para todos os componentes da aplicação.
+</p>
 
-### Compile and Minify for Production
+<h3>
+  HTML, CSS E JS
+</h3>
 
-```sh
-npm run build
-```
+<p>
+  Uso das tecnologias fundamentais do desenvolvimento front-end como o HTML para a criação dos templates dos componentes, css para estilização da aplicação e JS para trazer dinamismo à aplicação.
+</p>
+
+<h3>
+  Figma
+</h3>
+
+<p>
+  Para a criação do <strong><a href="https://www.figma.com/file/si2M5IoBtkS53scrzwzDw7/Pokédex-Project?node-id=0%3A1&t=sZCEfWi5z3zFjKA4-0" target="_blank">design da aplicação</a></strong> foi utilizada a ferramenta Figma, trazendo mais velocidade e praticidade na hora de tirar a idéia do papel.
+</p>
+
+<h3>
+  Git
+</h3>
+
+<p>
+  Para a criação deste repositório e controle de versionamento da aplicação, utilizei a ferramenta Git.
+</p>
